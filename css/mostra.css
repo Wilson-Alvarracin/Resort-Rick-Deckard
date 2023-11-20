@@ -4,10 +4,19 @@
     padding: 0;
 }
 
+.bg-lights {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    /* background-image: url("../img/fondo2.jpg"); */
+    background-color: #9B273F !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Opcional: ajusta el tamaño de la imagen para cubrir el área */
 }
 
 .image-grid {
@@ -16,6 +25,19 @@ body {
     gap: 10px;
     margin: 0 auto;
     height: 85vh;
+    padding-top: 5%;
+    width: 200vh;
+}
+
+.navbar {
+    margin-top: 1%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.image-item a {
+    display: block;
+    height: 100%;
 }
 
 .image-item {

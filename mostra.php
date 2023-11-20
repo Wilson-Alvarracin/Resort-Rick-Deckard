@@ -22,11 +22,13 @@ if (!isset($_SESSION['id'])) {
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light position-top">
+    <nav class="navbar navbar-light bg-lights position-top">
         <div class="container">
             <a class="navbar-brand " href="#">
-                <img src="./img/LOGORICK.png" alt="" width="100" height="90">
+                <img src="./img/LOGORICK _Blanco.png" alt="" width="100" height="90">
             </a>
+            <b style="color:white">¡Hola,<?php echo $_SESSION['user'];?>!</b>
+
         </div>
     </nav>
     <div class="image-grid">
