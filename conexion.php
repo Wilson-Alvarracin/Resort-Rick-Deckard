@@ -2,7 +2,7 @@
  $dbserver="bd_restaurante";
  $dbuser="root";
  $dbpwd="";
- $dbbasedatos="ShakAndCo";
+ $dbbasedatos="bd_restaurante";
 
 
  try{
