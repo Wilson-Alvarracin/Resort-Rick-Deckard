@@ -1,5 +1,5 @@
 <?php
- $dbserver="bd_restaurante";
+ $dbserver="localhost";
  $dbuser="root";
  $dbpwd="";
  $dbbasedatos="bd_restaurante";
