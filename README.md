@@ -1,3 +1,6 @@
+# Resort-Rick-Deckard
+Aplicacion web de ocupacion de mesas
+
 ## Estructura de distribución del Proyecto:
 
 El proyecto se organiza de manera estructurada y lógica para facilitar el desarrollo, mantenimiento y legibilidad del código. La distribución de los archivos se ha planeado cuidadosamente, siguiendo una arquitectura de carpetas clara y coherente.
