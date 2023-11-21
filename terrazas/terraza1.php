@@ -72,7 +72,6 @@ if (!isset($_SESSION['id'])) {
     }
     ?>
 </form>
-
 </body>
 
 </html>

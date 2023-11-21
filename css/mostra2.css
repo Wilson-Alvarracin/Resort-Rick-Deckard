@@ -41,6 +41,45 @@
     background: white;
 }
 
+.atrasboton {
+    color: white;
+    background: linear-gradient(to right, #9B273F, #011535);
+    border: none;
+    border-radius: 4vh;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-right: 5vh;
+}
+
+.atrasboton:hover {
+    color: #043689;
+    background: white;
+}
+
+.atrasimg {
+    height: 4vh;
+    margin: 0.6vh;
+    margin-right: 0.9vh;
+    transition: all 0.3s ease 0s;
+}
+
+.atrasimg:hover {
+    height: 4.5vh;
+    filter: brightness(0%);
+}
+
+.atrasimg {
+    height: 4vh;
+    margin: 0.6vh;
+    margin-right: 0.9vh;
+    transition: all 0.3s ease 0s;
+}
+
+.atrasimg:hover {
+    height: 4.5vh;
+    filter: brightness(0%);
+}
+
 .bg-lights {
     background-color: rgba(0, 0, 0, 0.7) !important;
 }
@@ -103,4 +142,28 @@ body {
 
 .image-text h2 {
     margin-bottom: 5px;
+}
+
+@media (max-width: 800px) {
+    .image-grid {
+        grid-template-columns: repeat(1, 1fr);
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 75%;
+    }
+    .image-item:hover {
+        transform: none;
+    }
+    .image-text {
+        opacity: 1;
+    }
+    .logoutboton {
+        margin-left: 600%;
+    }
+    .navbar-light .navbar-brand {
+        margin-bottom: -15%;
+    }
+    .saludo b {
+        font-size: 13px;
+    }
 }

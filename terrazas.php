@@ -30,8 +30,11 @@ if (!isset($_SESSION['id'])) {
             <div class="saludo">
             <b style="color:white">¡Bienvenido al portal, <?php echo $_SESSION['user'];?>!</b>
 
-            </div>            <a href="./inc/salir.php"><button class="logoutboton"><img class="logoutimg" src="./img/LOGOUT.png" alt=""></button></a>
-
+            </div>   
+            <div>         
+            <a href="javascript:history.back()"><button class="atrasboton"><img class="atrasimg" src="./img/atras.png" alt=""></button></a>
+            <a href="./inc/salir.php"><button class="logoutboton"><img class="logoutimg" src="./img/LOGOUT.png" alt=""></button></a>
+            </div>
         </div>
     </nav>
     <div class="image-grid">
