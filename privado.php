@@ -3,7 +3,6 @@ session_start();
 if (!isset($_SESSION['id'])) {
     header("Location: ./index.php");
     exit;
-<<<<<<< HEAD
 } else if (isset($_GET['logout'])) {
     session_destroy();
     header("Location: ./index.php");
@@ -31,8 +30,11 @@ if (!isset($_SESSION['id'])) {
             <div class="saludo">
             <b style="color:white">¡Bienvenido al portal, <?php echo $_SESSION['user'];?>!</b>
 
-            </div>            <a href="./inc/salir.php"><button class="logoutboton"><img class="logoutimg" src="./img/LOGOUT.png" alt=""></button></a>
-
+            </div>    
+            <div>        
+            <a href="javascript:history.back()"><button class="atrasboton"><img class="atrasimg" src="./img/atras.png" alt=""></button></a>
+            <a href="./inc/salir.php"><button class="logoutboton"><img class="logoutimg" src="./img/LOGOUT.png" alt=""></button></a>
+            </div>
         </div>
     </nav>
     <div class="image-grid">
@@ -77,8 +79,7 @@ if (!isset($_SESSION['id'])) {
 </body>
 
 </html>
-=======
-
+<!-- 
 }else{
     if (isset($_GET['priv'])) {
         $typsala = "Privada";
@@ -100,4 +101,4 @@ if (!isset($_SESSION['id'])) {
 
 }
 
->>>>>>> 611986d3d5b61adb3fc40f6cf8901c00a366f59c
+>>>>>>> 611986d3d5b61adb3fc40f6cf8901c00a366f59c -->

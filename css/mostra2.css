@@ -41,6 +41,45 @@
     background: white;
 }
 
+.atrasboton {
+    color: white;
+    background: linear-gradient(to right, #9B273F, #011535);
+    border: none;
+    border-radius: 4vh;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-right: 5vh;
+}
+
+.atrasboton:hover {
+    color: #043689;
+    background: white;
+}
+
+.atrasimg {
+    height: 4vh;
+    margin: 0.6vh;
+    margin-right: 0.9vh;
+    transition: all 0.3s ease 0s;
+}
+
+.atrasimg:hover {
+    height: 4.5vh;
+    filter: brightness(0%);
+}
+
+.atrasimg {
+    height: 4vh;
+    margin: 0.6vh;
+    margin-right: 0.9vh;
+    transition: all 0.3s ease 0s;
+}
+
+.atrasimg:hover {
+    height: 4.5vh;
+    filter: brightness(0%);
+}
+
 .bg-lights {
     background-color: rgba(0, 0, 0, 0.7) !important;
 }
