@@ -14,7 +14,9 @@
 .saludo {
     color: white;
 }
-
+.diss{
+    color: red;
+}
 .logoutboton {
     color: white;
     background: linear-gradient(to right, #9B273F, #011535);

@@ -37,45 +37,40 @@ if (!isset($_SESSION['id'])) {
             </div>
         </div>
     </nav>
-    <div class="image-grid">
-        <a>
-            <div class="image-item">
-                <img class="filtro" src="../img/mesas.png" alt="Imagen 1">
-                <div  class="image-text">
-                    <h2>Mesa 301</h2>
-                    <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
-                </div>
-            </div>
-    </a>
-    <a>
-        <div class="image-item">
-            <img class="filtro" src="../img/mesas.png" alt="Imagen 2">
-            <div class="image-text">
-                <h2>Mesa 302</h2>
-                <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
-            </div>
-    </div>
-    </a>
+    <?php
+    if (isset($_GET['id'])) {
+        include './../inc/conexion.php';
+        $id = trim(mysqli_real_escape_string($conn,$_GET['id']));
+        // echo "sapo";
+        $sql = "SELECT * FROM mesas WHERE id_sala = ?";
+        $stmt = mysqli_prepare($conn,$sql);
+        mysqli_stmt_bind_param($stmt, "s",$id);
+        mysqli_stmt_execute($stmt);
+        $res = mysqli_stmt_get_result($stmt);
 
-    <a>
-        <div class="image-item">
-            <img class="filtro" src="../img/mesas.png" alt="Imagen 3">
-            <div class="image-text">
-                <h2>Mesa 303</h2>
-                <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
-            </div>
-        </div>
-    </a>
-    <a>
-            <div class="image-item">
-                <img class="filtro" src="../img/mesas.png" alt="Imagen 1">
-                <div class="image-text">
-                    <h2>Mesa 304</h2>
-                    <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
-                </div>
-            </div>
-    </a>
-    </div>
+        // INICIO DE PAGINACION MESAS
+
+        echo '<div class="image-grid">';
+        foreach ($res as $mesa) {
+            # code...
+            echo'<a><div class="image-item">';
+            if ($mesa['estado'] == "ocupada") {
+                echo '<img class="filtro" src="../img/mesas.png" alt="Imagen 1">';
+                echo '<div class="image-text"><h2> Mesa'.$mesa['numero_mesa'].'</h2>';  
+                echo '<p class="diss">'.$mesa['estado'].'</p>';
+            }else{
+                echo '<img class="" src="../img/mesas.png" alt="Imagen 1">';
+                echo '<div class="image-text"><h2> Mesa'.$mesa['numero_mesa'].'</h2>';
+                echo '<p>'.$mesa['estado'].'</p>';
+
+            }
+            echo '</div></div></a>';
+        }
+    }else{
+
+    }
+    ?>
+
 </body>
 
 </html>

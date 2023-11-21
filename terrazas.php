@@ -38,7 +38,7 @@ if (!isset($_SESSION['id'])) {
         </div>
     </nav>
     <div class="image-grid">
-        <a href="./terrazas/terraza1.php">
+        <a href="./terrazas/terraza1.php?id=1">
             <div class="image-item">
                 <img src="./img/terraza1.jpg" alt="Imagen 1">
                 <div class="image-text">
@@ -47,7 +47,7 @@ if (!isset($_SESSION['id'])) {
                 </div>
             </div>
         </a>
-        <a href="./terrazas/terraza2.php">
+        <a href="./terrazas/terraza2.php?id=2">
             <div class="image-item">
                 <img src="./img/terraza2.jpg" alt="Imagen 2">
                 <div class="image-text">
@@ -56,7 +56,7 @@ if (!isset($_SESSION['id'])) {
                 </div>
             </div>
         </a>
-        <a href="./terrazas/terraza3.php">
+        <a href="./terrazas/terraza3.php?id=3">
             <div class="image-item">
                 <img src="./img/terraza3.jpg" alt="Imagen 3">
                 <div class="image-text">

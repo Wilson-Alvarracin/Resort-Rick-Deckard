@@ -28,8 +28,7 @@ if (!isset($_SESSION['id'])) {
                 <img src="../img/LOGORICK _Blanco.png" alt="" width="100" height="90">
             </a>
             <div class="saludo">
-            <b style="color:white">¡Bienvenido al portal, <?php echo $_SESSION['user'];?>!</b>
-
+            <b>¡Bienvenido al portal, <?php echo $_SESSION['user'];?>!</b>
             </div>
             <div>
             <a href="javascript:history.back()"><button class="atrasboton"><img class="atrasimg" src="../img/atras.png" alt=""></button></a>
@@ -37,61 +36,42 @@ if (!isset($_SESSION['id'])) {
             </div>
         </div>
     </nav>
-    <div class="image-grid">
-        <a>
-            <div class="image-item">
-                <img class="filtro" src="../img/mesas.png" alt="Imagen 1">
-                <div class="image-text">
-                    <h2>Mesa 101</h2>
-                    <form method='POST' action="../inc/procesar.php">
-                        <input type="hidden" name="numero_mesa" value="101">
-                        <input type="submit">
-                    </form>
-                    <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
-                </div>
-            </div>
-    </a>
-    <a>
-        <div class="image-item">
-            <img class="filtro" src="../img/mesas.png" alt="Imagen 2">
-            <div class="image-text">
-                <h2>Mesa 102</h2>
-                <form method='POST' action="../inc/procesar.php">
-                        <input type="hidden" name="numero_mesa" value="102">
-                        <input type="submit">
-                </form>
-                <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
-            </div>
-    </div>
-    </a>
 
-    <a>
-        <div class="image-item">
-            <img class="filtro" src="../img/mesas.png" alt="Imagen 3">
-            <div class="image-text">
-                <h2>Mesa 103</h2>
-                <form method='POST' action="../inc/procesar.php">
-                        <input type="hidden" name="numero_mesa" value="103">
-                        <input type="submit">
-                </form>
-                <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
-            </div>
-        </div>
-    </a>
-    <a>
-            <div class="image-item">
-                <img class="filtro" src="../img/mesas.png" alt="Imagen 1">
-                <div class="image-text">
-                    <h2>Mesa 104</h2>
-                    <form method='POST' action="../inc/procesar.php">
-                        <input type="hidden" name="numero_mesa" value="104">
-                        <input type="submit">
-                    </form>
-                    <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
-                </div>
-            </div>
-    </a>
-    </div>
+    <!----------------FIN DE LA BARRA DE NAVEGACION --------------------->
+    <?php
+    if (isset($_GET['id'])) {
+        include './../inc/conexion.php';
+        $id = trim(mysqli_real_escape_string($conn,$_GET['id']));
+        // echo "sapo";
+        $sql = "SELECT * FROM mesas WHERE id_sala = ?";
+        $stmt = mysqli_prepare($conn,$sql);
+        mysqli_stmt_bind_param($stmt, "s",$id);
+        mysqli_stmt_execute($stmt);
+        $res = mysqli_stmt_get_result($stmt);
+
+        // INICIO DE PAGINACION MESAS
+
+        echo '<div class="image-grid">';
+        foreach ($res as $mesa) {
+            # code...
+            echo'<a><div class="image-item">';
+            if ($mesa['estado'] == "ocupada") {
+                echo '<img class="filtro" src="../img/mesas.png" alt="Imagen 1">';
+                echo '<div class="image-text"><h2> Mesa'.$mesa['numero_mesa'].'</h2>';  
+                echo '<p class="diss">'.$mesa['estado'].'</p>';
+            }else{
+                echo '<img class="" src="../img/mesas.png" alt="Imagen 1">';
+                echo '<div class="image-text"><h2> Mesa'.$mesa['numero_mesa'].'</h2>';
+                echo '<p>'.$mesa['estado'].'</p>';
+
+            }
+            echo '</div></div></a>';
+        }
+    }else{
+
+    }
+    ?>
+</form>
 </body>
 
 </html>
