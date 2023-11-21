@@ -22,17 +22,22 @@ if (!isset($_SESSION['id'])) {
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light position-top">
+    <nav class="navbar navbar-light bg-lights position-top">
         <div class="container">
             <a class="navbar-brand " href="./mostra.php">
-                <img src="./img/LOGORICK.png" alt="" width="100" height="90">
+                <img src="./img/LOGORICK _Blanco.png" alt="" width="100" height="90">
             </a>
+            <div class="saludo">
+            <b style="color:white">¡Bienvenido al portal, <?php echo $_SESSION['user'];?>!</b>
+
+            </div>            <a href="./inc/salir.php"><button class="logoutboton"><img class="logoutimg" src="./img/LOGOUT.png" alt=""></button></a>
+
         </div>
     </nav>
     <div class="image-grid">
         <a href="./terrazas.php">
             <div class="image-item">
-                <img src="./img/terraza.jpg" alt="Imagen 1">
+                <img src="./img/terraza1.jpg" alt="Imagen 1">
                 <div class="image-text">
                     <h2>Terraza 1</h2>
                     <p>Aqui se pone la leyenda</p>
@@ -41,7 +46,7 @@ if (!isset($_SESSION['id'])) {
         </a>
         <a href="./comedores.php">
             <div class="image-item">
-                <img src="./img/comedor.jpg" alt="Imagen 2">
+                <img src="./img/terraza2.jpg" alt="Imagen 2">
                 <div class="image-text">
                     <h2>Terraza 2</h2>
                     <p>Aqui se pone la leyenda</p>
@@ -51,7 +56,7 @@ if (!isset($_SESSION['id'])) {
 
         <a href="./privado.php">
             <div class="image-item">
-                <img src="./img/private.jpg" alt="Imagen 3">
+                <img src="./img/terraza3.jpg" alt="Imagen 3">
                 <div class="image-text">
                     <h2>Terraza 3</h2>
                     <p>Aqui se pone la leyenda</p>

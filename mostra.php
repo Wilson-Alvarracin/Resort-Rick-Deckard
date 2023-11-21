@@ -27,7 +27,11 @@ if (!isset($_SESSION['id'])) {
             <a class="navbar-brand " href="#">
                 <img src="./img/LOGORICK _Blanco.png" alt="" width="100" height="90">
             </a>
-            <b style="color:white">¡Hola,<?php echo $_SESSION['user'];?>!</b>
+            <div class="saludo">
+            <b style="color:white">¡Bienvenido al portal, <?php echo $_SESSION['user'];?>!</b>
+
+            </div>
+            <a href="./inc/salir.php"><button class="logoutboton"><img class="logoutimg" src="./img/LOGOUT.png" alt=""></button></a>
 
         </div>
     </nav>

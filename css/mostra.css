@@ -16,7 +16,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* Opcional: ajusta el tamaño de la imagen para cubrir el área */
 }
 
 .image-grid {
@@ -33,6 +32,37 @@ body {
     margin-top: 1%;
     margin-right: 5%;
     margin-left: 5%;
+    border-radius: 10px;
+}
+
+.logoutboton {
+    color: white;
+    background: linear-gradient(to right, #9B273F, #011535);
+    border: none;
+    border-radius: 4vh;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.saludo {
+    color: white;
+}
+
+.logoutimg:hover {
+    height: 4.5vh;
+    filter: grayscale(100%) brightness(50%) sepia(100%) hue-rotate(-50deg) saturate(1000%) contrast(1);
+}
+
+.logoutimg {
+    height: 4vh;
+    margin: 0.6vh;
+    margin-right: 0.9vh;
+    transition: all 0.3s ease 0s;
+}
+
+.logoutboton:hover {
+    color: #043689;
+    background: white;
 }
 
 .image-item a {
@@ -44,7 +74,6 @@ body {
     position: relative;
     width: 100%;
     padding-bottom: 100%;
-    /* Hace que el contenedor tenga un aspecto cuadrado */
     overflow: hidden;
 }
 
