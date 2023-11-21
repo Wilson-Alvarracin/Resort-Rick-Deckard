@@ -104,3 +104,28 @@ body {
 .image-text h2 {
     margin-bottom: 5px;
 }
+
+@media (max-width: 800px) {
+    .image-grid {
+        grid-template-columns: repeat(1, 1fr);
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 10%;
+        gap: 5px;
+    }
+    .image-item:hover {
+        transform: none;
+    }
+    .image-text {
+        opacity: 1;
+    }
+    .logoutboton {
+        margin-left: 600%;
+    }
+    .navbar-light .navbar-brand {
+        margin-bottom: -15%;
+    }
+    .saludo b {
+        font-size: 13px;
+    }
+}
