@@ -43,6 +43,10 @@ if (!isset($_SESSION['id'])) {
                 <img src="../img/mesas.png" alt="Imagen 1">
                 <div class="image-text">
                     <h2>Mesa 101</h2>
+                    <form method='POST' action="../inc/procesar.php">
+                        <input type="hidden" name="numero_mesa" value="101">
+                        <input type="submit">
+                    </form>
                     <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
                 </div>
             </div>
@@ -52,6 +56,10 @@ if (!isset($_SESSION['id'])) {
             <img src="../img/mesas.png" alt="Imagen 2">
             <div class="image-text">
                 <h2>Mesa 102</h2>
+                <form method='POST' action="../inc/procesar.php">
+                        <input type="hidden" name="numero_mesa" value="102">
+                        <input type="submit">
+                </form>
                 <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
             </div>
     </div>
@@ -62,6 +70,10 @@ if (!isset($_SESSION['id'])) {
             <img src="../img/mesas.png" alt="Imagen 3">
             <div class="image-text">
                 <h2>Mesa 103</h2>
+                <form method='POST' action="../inc/procesar.php">
+                        <input type="hidden" name="numero_mesa" value="103">
+                        <input type="submit">
+                </form>
                 <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
             </div>
         </div>
@@ -71,6 +83,10 @@ if (!isset($_SESSION['id'])) {
                 <img src="../img/mesas.png" alt="Imagen 1">
                 <div class="image-text">
                     <h2>Mesa 104</h2>
+                    <form method='POST' action="../inc/procesar.php">
+                        <input type="hidden" name="numero_mesa" value="104">
+                        <input type="submit">
+                    </form>
                     <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
                 </div>
             </div>
