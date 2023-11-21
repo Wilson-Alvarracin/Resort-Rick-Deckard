@@ -3,22 +3,55 @@ include_once('./conexion.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['numero_mesa'])) {
-        
-        $sql = "SELECT numero_mesa FROM mesas WHERE numero_mesa = ? ;";
-
+        $numero_mesa = $_POST['numero_mesa'];
+        $sql = "SELECT numero_mesa, estado FROM mesas WHERE numero_mesa = ? ;";
         $stmt = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt, "i", $_POST['numero_mesa']);
-        mysqli_stmt_execute($stmt);
-        
-        mysqli_stmt_store_result($stmt);
+        if ($stmt) {
+            mysqli_stmt_bind_param($stmt, "i", $numero_mesa);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_store_result($stmt);
+                if (mysqli_stmt_num_rows($stmt) > 0) {
+                    mysqli_stmt_bind_result($stmt, $numero_mesa, $estado);
+                    mysqli_stmt_fetch($stmt);
 
-        if (mysqli_stmt_num_rows($stmt) > 0) {
-            echo "La mesa con número ".$_POST['numero_mesa']." existe.";
-        } else {
-            echo "La mesa con número ".$_POST['numero_mesa']." no existe.";
+                    if ($estado == 'libre') {
+                        $L_update_sql = "UPDATE mesas SET estado = 'ocupada' WHERE numero_mesa = ?";
+                        $L_update_stmt = mysqli_prepare($conn, $L_update_sql);
+
+                        if ($L_update_stmt) {
+                            mysqli_stmt_bind_param($L_update_stmt, "i", $numero_mesa);
+                            mysqli_stmt_execute($L_update_stmt);
+
+                            echo "Ahora la mesa está OCUPADA";
+                            die();
+                        } else {
+                            echo "Error";
+                            die();
+                        }
+
+                        mysqli_stmt_close($O_update_stmt);
+                    } elseif ($estado == 'ocupada') {
+                        $O_update_sql = "UPDATE mesas SET estado = 'libre' WHERE numero_mesa = ?";
+                        $O_update_stmt = mysqli_prepare($conn, $O_update_sql);
+
+                        if ($O_update_stmt) {
+                            mysqli_stmt_bind_param($O_update_stmt, "i", $numero_mesa);
+                            mysqli_stmt_execute($O_update_stmt);
+
+                            echo "Ahora la mesa está LIBRE";
+                            die();
+                        } else {
+                            echo "Error";
+                            die();
+                        }
+
+                        mysqli_stmt_close($update_stmt);
+                    }
+                } else {
+                    echo "La mesa con número $numero_mesa no existe en la BD";
+                }
+                mysqli_stmt_close($stmt);
         }
-
-        mysqli_stmt_close($stmt);
         
     } else {
         echo "No funciona";
