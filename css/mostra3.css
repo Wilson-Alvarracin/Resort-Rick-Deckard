@@ -57,12 +57,12 @@ body {
 
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px;
     margin: 0 auto;
     height: 85vh;
     padding-top: 5%;
-    width: 200vh;
+    width: 150vh;
 }
 
 .image-item {

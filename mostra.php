@@ -15,18 +15,23 @@ if (!isset($_SESSION['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RICK DECKARD - HOME</title>
     <link rel="stylesheet" href="./css/mostra.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light position-top">
+    <nav class="navbar navbar-light bg-lights position-top">
         <div class="container">
             <a class="navbar-brand " href="#">
-                <img src="./img/LOGORICK.png" alt="" width="100" height="90">
+                <img src="./img/LOGORICK _Blanco.png" alt="" width="100" height="90">
             </a>
+            <div class="saludo">
+            <b style="color:white">¡Bienvenido al portal, <?php echo $_SESSION['user'];?>!</b>
+
+            </div>
+            <a href="./inc/salir.php"><button class="logoutboton"><img class="logoutimg" src="./img/LOGOUT.png" alt=""></button></a>
         </div>
     </nav>
     <div class="image-grid">
