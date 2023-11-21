@@ -29,11 +29,13 @@ if (!isset($_SESSION['id'])) {
             </a>
             <div class="saludo">
             <b style="color:white">¡Bienvenido al portal, <?php echo $_SESSION['user'];?>!</b>
-
             </div>
             <a href="./inc/salir.php"><button class="logoutboton"><img class="logoutimg" src="./img/LOGOUT.png" alt=""></button></a>
         </div>
     </nav>
+    
+<!------------FIN BARRA DE NAVEGACION--------------------->
+
     <div class="image-grid">
         <a href="./terrazas.php">
             <div class="image-item">
