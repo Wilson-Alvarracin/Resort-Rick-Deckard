@@ -35,7 +35,7 @@ if (!isset($_SESSION['id'])) {
         </div>
     </nav>
     <div class="image-grid">
-        <a href="./terrazas/terraza1.php">
+        <a href="./comedores/comedor1.php">
             <div class="image-item">
                 <img src="./img/comedor1.jpg" alt="Imagen 1">
                 <div class="image-text">
@@ -44,7 +44,7 @@ if (!isset($_SESSION['id'])) {
                 </div>
             </div>
         </a>
-        <a href="./terrazas/terraza2.php">
+        <a href="./comedores/comedor2.php">
             <div class="image-item">
                 <img src="./img/comedor2.jpg" alt="Imagen 2">
                 <div class="image-text">

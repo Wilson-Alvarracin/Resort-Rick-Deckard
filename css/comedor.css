@@ -55,14 +55,48 @@ body {
     background-size: cover;
 }
 
+.atrasboton {
+    color: white;
+    background: linear-gradient(to right, #9B273F, #011535);
+    border: none;
+    border-radius: 4vh;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-right: 5vh;
+}
+
+.atrasboton:hover {
+    color: #043689;
+    background: white;
+}
+
+.atrasimg {
+    height: 4vh;
+    margin: 0.6vh;
+    margin-right: 0.9vh;
+    transition: all 0.3s ease 0s;
+}
+
+.atrasimg:hover {
+    height: 4.5vh;
+    filter: brightness(0%);
+}
+
+.centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 20%;
+}
+
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 100px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
     margin: 0 auto;
-    height: 85vh;
-    padding-top: 5%;
-    width: 150vh;
+    padding-top: 0%;
+    width: 200vh;
 }
 
 .image-item {
