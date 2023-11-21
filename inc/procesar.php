@@ -11,7 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = mysqli_stmt_get_result($stmt);
 
         if (mysqli_stmt_num_rows($stmt) > 0) {
-            $row = 
+            echo "La mesa con número ".$_POST['numero_mesa']." existe.";
+        } else {
+            echo "La mesa con número ".$_POST['numero_mesa']." no existe.";
         }
         
     } else {
