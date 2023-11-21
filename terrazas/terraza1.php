@@ -53,7 +53,6 @@ if (!isset($_SESSION['id'])) {
 
         echo '<div class="image-grid">';
         foreach ($res as $mesa) {
-            # code...
             echo'<a><div class="image-item">';
             if ($mesa['estado'] == "ocupada") {
                 echo '<img class="filtro" src="../img/mesas.png" alt="Imagen 1">';
@@ -65,13 +64,19 @@ if (!isset($_SESSION['id'])) {
                 echo '<p>'.$mesa['estado'].'</p>';
 
             }
+            echo '<form method="POST" action="../inc/procesar.php">
+            <input type="hidden" name="numero_mesa" value="'.$mesa['numero_mesa'].'">
+            <input type="submit">
+        </form> ';
             echo '</div></div></a>';
         }
+        echo '</div>';
     }else{
 
     }
     ?>
-</form>
+    <form action="" method="post"></form>
+
 </body>
 
 </html>

@@ -64,6 +64,9 @@ if (!isset($_SESSION['id'])) {
                 echo '<p>'.$mesa['estado'].'</p>';
 
             }
+            echo '<form method="POST" action="../inc/procesar.php">
+            <input type="hidden" name="numero_mesa" value="'.$mesa['numero_mesa'].'">
+            <input type="submit"></form> ';
             echo '</div></div></a>';
         }
     }else{
