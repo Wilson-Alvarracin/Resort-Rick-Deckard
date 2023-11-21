@@ -93,7 +93,7 @@ body {
 .image-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 100px;
     margin: 0 auto;
     padding-top: 0%;
     width: 200vh;
