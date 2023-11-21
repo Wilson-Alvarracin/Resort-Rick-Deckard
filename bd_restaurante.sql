@@ -80,38 +80,38 @@ INSERT INTO mesas (id_mesa, numero_mesa, id_sala, estado) VALUES
 -- Insertar mesas en los comedores (10 mesas en cada comedor)
 INSERT INTO mesas (id_mesa, numero_mesa, id_sala, estado) VALUES
     -- Mesas para el Menjador 1
-    (13, 305, 3, 'libre'),
-    (14, 306, 3, 'libre'),
-    (15, 307, 3, 'libre'),
-    (16, 308, 3, 'libre'),
-    (17, 309, 3, 'libre'),
-    (18, 310, 3, 'libre'),
-    (19, 311, 3, 'libre'),
-    (20, 312, 3, 'libre'),
-    (21, 313, 3, 'libre'),
-    (22, 314, 3, 'libre'),
-    (23, 315, 3, 'libre'),
-    (24, 316, 3, 'libre'),
+    (13, 401, 4, 'libre'),
+    (14, 402, 4, 'libre'),
+    (15, 403, 4, 'libre'),
+    (16, 404, 4, 'libre'),
+    (17, 405, 4, 'libre'),
+    (18, 406, 4, 'libre'),
+    (19, 407, 4, 'libre'),
+    (20, 408, 4, 'libre'),
+    (21, 409, 4, 'libre'),
+    (22, 410, 4, 'libre'),
+    (23, 411, 4, 'libre'),
+    (24, 412, 4, 'libre'),
     -- Mesas para el Menjador 2
-    (25, 401, 4, 'libre'),
-    (26, 402, 4, 'libre'),
-    (27, 403, 4, 'libre'),
-    (28, 404, 4, 'libre'),
-    (29, 405, 4, 'libre'),
-    (30, 406, 4, 'libre'),
-    (31, 407, 4, 'libre'),
-    (32, 408, 4, 'libre'),
-    (33, 409, 4, 'libre'),
-    (34, 410, 4, 'libre'),
-    (35, 411, 4 ,'libre'),
-    (36, 412, 4, 'libre');
+    (25, 501, 5, 'libre'),
+    (26, 502, 5, 'libre'),
+    (27, 503, 5, 'libre'),
+    (28, 504, 5, 'libre'),
+    (29, 505, 5, 'libre'),
+    (30, 506, 5, 'libre'),
+    (31, 507, 5, 'libre'),
+    (32, 508, 5, 'libre'),
+    (33, 509, 5, 'libre'),
+    (34, 510, 5, 'libre'),
+    (35, 511, 5 ,'libre'),
+    (36, 512, 5, 'libre');
 
     -- Insertar mesas en las salas privadas (1 mesa por sala)
 INSERT INTO mesas (id_mesa, numero_mesa, id_sala, estado) VALUES
-    (37, 501, 6, 'libre'),
-    (38, 601, 7, 'libre'),
-    (39, 701, 8, 'libre'),
-    (40, 801, 9, 'libre');
+    (37, 601, 6, 'libre'),
+    (38, 701, 7, 'libre'),
+    (39, 801, 8, 'libre'),
+    (40, 901, 9, 'libre');
 
 -- Insertar ocupaciones (registros de ocupación de mesas)
 INSERT INTO ocupaciones (id_ocupacion, id_usuario, id_mesa, fecha_inicio, fecha_fin) VALUES
