@@ -92,7 +92,7 @@ INSERT INTO mesas (id_mesa, numero_mesa, id_sala, estado) VALUES
     (21, 503, 5, 'libre'),
     (22, 504, 5, 'libre'),
     (23, 505, 5, 'libre'),
-    (24, 506, 5, 'libre'),
+    (24, 506, 5, 'libre');
 
     -- Insertar mesas en las salas privadas (1 mesa por sala)
 INSERT INTO mesas (id_mesa, numero_mesa, id_sala, estado) VALUES
