@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+html {
+    color: white;
+    font-family: 'Rubik', sans-serif;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: url(../img/fondo.jpg);
+    background-size: cover;
+    background-position: center center;
+    /* Centra la imagen */
+    z-index: -1;
+}
+
+header {
+    height: 20vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.logoarriba {
+    visibility: hidden;
+}
+
+.column-2-izq {
+    width: 50%;
+    float: left;
+}
+
+.column-2-der {
+    width: 50%;
+    float: left;
+}
+
+.izquierda {
+    margin-right: 50%;
+}
+
+.logo {
+    width: 35vh;
+}
+
+.derecha {
+    margin-left: 50%;
+}
+
+.vh-100 {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: url(../img/fondo.jpg);
+    background-size: cover;
+    z-index: -1;
+}
+
+.nav img {
+    margin-top: 10vh;
+    height: 20vh;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.pwdolvidada {
+    margin-top: 1vh;
+    font-size: 1.8vh;
+    color: white;
+}
+
+.pwdolvidada:hover {
+    color: #0085d0;
+    transition: 0.5s;
+}
+
+.register {
+    margin-top: 1vh;
+    font-size: 1.8vh;
+    color: white;
+    text-align: right;
+    margin-top: -2vh;
+}
+
+.register:hover {
+    color: #0085d0;
+    transition: 0.5s;
+}
+
+.abajo {
+    margin: 2vh 0;
+}
+
+.tc {
+    margin-top: 1vh;
+    font-size: 1.8vh;
+    color: white;
+    text-align: right;
+}
+
+.tc:hover {
+    color: #0085d0;
+    transition: 0.5s;
+}
+
+.pp {
+    margin-top: 1vh;
+    font-size: 1.8vh;
+    color: white;
+    margin-top: -2vh;
+}
+
+.pp:hover {
+    color: #0085d0;
+    transition: 0.5s;
+}
+
+.container {
+    margin: 0 5vh;
+    margin-top: -15vh;
+    width: 750px;
+    padding: 4vh;
+    padding-bottom: 2vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: fade-in 1s ease-in-out;
+    border-radius: 4vh;
+}
+
+.container .boton {
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+}
+
+#titulo {
+    font-weight: 500;
+    font-size: 3.5vh;
+}
+
+#oscuro {
+    height: 80vh;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.container h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.inputs {
+    margin-top: 2vh;
+    margin-right: 2vh;
+}
+
+.inputs label {
+    margin-bottom: 1vh;
+}
+
+.inputs label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    border-radius: 4px;
+}
+
+.form-control:focus {
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.boton {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 2vh;
+    border: none;
+    background: linear-gradient(to right, #730035, #001936);
+    color: white;
+    border-radius: 4vh;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.boton:hover {
+    background: white;
+    color: #001936;
+    font-size: 2.2vh;
+    transition: 0.5s;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 800px) {
+    .container {
+        width: 290px;
+        padding: 4vh;
+        padding-bottom: 2vh;
+    }
+    .logoarriba {
+        visibility: visible;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 10%;
+    }
+    .nav img {
+        height: 22vh;
+    }
+    .column-2-izq {
+        width: 0%;
+        float: left;
+        visibility: hidden;
+    }
+    .column-2-der {
+        width: 100%;
+        float: left;
+    }
+    .tc {
+        font-size: 1.8vh;
+        color: white;
+        text-align: center;
+    }
+    .tc:hover {
+        color: #0085d0;
+        transition: 0.5s;
+    }
+    .pp {
+        margin-top: 1vh;
+        font-size: 1.8vh;
+        color: white;
+        text-align: center;
+    }
+    .pp:hover {
+        color: #0085d0;
+        transition: 0.5s;
+    }
+}
+
+
+/* ---------------------- */
