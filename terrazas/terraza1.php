@@ -24,14 +24,17 @@ if (!isset($_SESSION['id'])) {
 <body>
     <nav class="navbar navbar-light bg-lights position-top">
         <div class="container">
-            <a class="navbar-brand " href="#">
+            <a class="navbar-brand " href="../mostra.php">
                 <img src="../img/LOGORICK _Blanco.png" alt="" width="100" height="90">
             </a>
             <div class="saludo">
             <b style="color:white">¡Bienvenido al portal, <?php echo $_SESSION['user'];?>!</b>
 
             </div>
-            <a href="../inc/salir.php"><button class="logoutboton"><img class="logoutimg" src="./img/LOGOUT.png" alt=""></button></a>
+            <div>
+            <a href="javascript:history.back()"><button class="atrasboton"><img class="atrasimg" src="../img/atras.png" alt=""></button></a>
+            <a href="../inc/salir.php"><button class="logoutboton"><img class="logoutimg" src="../img/LOGOUT.png" alt=""></button></a>
+            </div>
         </div>
     </nav>
     <div class="image-grid">
@@ -39,7 +42,7 @@ if (!isset($_SESSION['id'])) {
             <div class="image-item">
                 <img src="../img/mesas.png" alt="Imagen 1">
                 <div class="image-text">
-                    <h2>Mesa 1</h2>
+                    <h2>Mesa 101</h2>
                     <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
                 </div>
             </div>
@@ -48,7 +51,7 @@ if (!isset($_SESSION['id'])) {
         <div class="image-item">
             <img src="../img/mesas.png" alt="Imagen 2">
             <div class="image-text">
-                <h2>Mesa 2</h2>
+                <h2>Mesa 102</h2>
                 <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
             </div>
     </div>
@@ -58,7 +61,7 @@ if (!isset($_SESSION['id'])) {
         <div class="image-item">
             <img src="../img/mesas.png" alt="Imagen 3">
             <div class="image-text">
-                <h2>Mesa 3</h2>
+                <h2>Mesa 103</h2>
                 <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
             </div>
         </div>
@@ -67,7 +70,7 @@ if (!isset($_SESSION['id'])) {
             <div class="image-item">
                 <img src="../img/mesas.png" alt="Imagen 1">
                 <div class="image-text">
-                    <h2>Mesa 4</h2>
+                    <h2>Mesa 104</h2>
                     <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
                 </div>
             </div>
