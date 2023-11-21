@@ -109,6 +109,10 @@ body {
     object-fit: cover;
 }
 
+.filtro {
+    filter: brightness(0%);
+}
+
 .image-item:hover {
     transform: scale(0.95);
 }

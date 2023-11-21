@@ -40,7 +40,7 @@ if (!isset($_SESSION['id'])) {
     <div class="image-grid">
         <a>
             <div class="image-item">
-                <img src="../img/mesas.png" alt="Imagen 1">
+                <img class="filtro" src="../img/mesas.png" alt="Imagen 1">
                 <div class="image-text">
                     <h2>Mesa 101</h2>
                     <form method='POST' action="../inc/procesar.php">
@@ -53,7 +53,7 @@ if (!isset($_SESSION['id'])) {
     </a>
     <a>
         <div class="image-item">
-            <img src="../img/mesas.png" alt="Imagen 2">
+            <img class="filtro" src="../img/mesas.png" alt="Imagen 2">
             <div class="image-text">
                 <h2>Mesa 102</h2>
                 <form method='POST' action="../inc/procesar.php">
@@ -67,7 +67,7 @@ if (!isset($_SESSION['id'])) {
 
     <a>
         <div class="image-item">
-            <img src="../img/mesas.png" alt="Imagen 3">
+            <img class="filtro" src="../img/mesas.png" alt="Imagen 3">
             <div class="image-text">
                 <h2>Mesa 103</h2>
                 <form method='POST' action="../inc/procesar.php">
@@ -80,7 +80,7 @@ if (!isset($_SESSION['id'])) {
     </a>
     <a>
             <div class="image-item">
-                <img src="../img/mesas.png" alt="Imagen 1">
+                <img class="filtro" src="../img/mesas.png" alt="Imagen 1">
                 <div class="image-text">
                     <h2>Mesa 104</h2>
                     <form method='POST' action="../inc/procesar.php">

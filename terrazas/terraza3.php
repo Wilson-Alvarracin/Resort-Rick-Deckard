@@ -40,8 +40,8 @@ if (!isset($_SESSION['id'])) {
     <div class="image-grid">
         <a>
             <div class="image-item">
-                <img src="../img/mesas.png" alt="Imagen 1">
-                <div class="image-text">
+                <img class="filtro" src="../img/mesas.png" alt="Imagen 1">
+                <div  class="image-text">
                     <h2>Mesa 301</h2>
                     <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
                 </div>
@@ -49,7 +49,7 @@ if (!isset($_SESSION['id'])) {
     </a>
     <a>
         <div class="image-item">
-            <img src="../img/mesas.png" alt="Imagen 2">
+            <img class="filtro" src="../img/mesas.png" alt="Imagen 2">
             <div class="image-text">
                 <h2>Mesa 302</h2>
                 <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
@@ -59,7 +59,7 @@ if (!isset($_SESSION['id'])) {
 
     <a>
         <div class="image-item">
-            <img src="../img/mesas.png" alt="Imagen 3">
+            <img class="filtro" src="../img/mesas.png" alt="Imagen 3">
             <div class="image-text">
                 <h2>Mesa 303</h2>
                 <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
@@ -68,7 +68,7 @@ if (!isset($_SESSION['id'])) {
     </a>
     <a>
             <div class="image-item">
-                <img src="../img/mesas.png" alt="Imagen 1">
+                <img class="filtro" src="../img/mesas.png" alt="Imagen 1">
                 <div class="image-text">
                     <h2>Mesa 304</h2>
                     <p>Estado: <?php echo "ocupada/no ocupada" ?></p>

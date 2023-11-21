@@ -99,6 +99,10 @@ body {
     width: 200vh;
 }
 
+.filtro {
+    filter: brightness(0%);
+}
+
 .image-item {
     position: relative;
     width: 100%;
