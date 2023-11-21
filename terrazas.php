@@ -53,7 +53,6 @@ if (!isset($_SESSION['id'])) {
                 </div>
             </div>
         </a>
-
         <a href="./terrazas/terraza3.php">
             <div class="image-item">
                 <img src="./img/terraza3.jpg" alt="Imagen 3">
