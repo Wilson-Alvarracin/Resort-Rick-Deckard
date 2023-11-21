@@ -49,36 +49,72 @@ INSERT INTO usuarios (id_usuario, nombre_user, contrasena) VALUES
 -- Insertar salas
 INSERT INTO salas (id_sala, nombre_sala, tipo_sala, capacidad) VALUES
     (1, 'Terraza 1', 'Terraza', 20),
-    (2, 'Terraza 2', 'Terraza', 15),
-    (3, 'Menjador 1', 'Menjador', 30),
-    (4, 'Menjador 2', 'Menjador', 25),
-    (5, 'Sala Privada 1', 'Privada', 10),
-    (6, 'Sala Privada 2', 'Privada', 8),
-    (7, 'Sala Privada 3', 'Privada', 12),
-    (8, 'Sala Privada 4', 'Privada', 15);
+    (2, 'Terraza 2', 'Terraza', 20),
+    (3, 'Terraza 3', 'Terraza', 20),
+    (4, 'Menjador 1', 'Menjador', 30),
+    (5, 'Menjador 2', 'Menjador', 25),
+    (6, 'Sala Privada 1', 'Privada', 10),
+    (7, 'Sala Privada 2', 'Privada', 8),
+    (8, 'Sala Privada 3', 'Privada', 12),
+    (9, 'Sala Privada 4', 'Privada', 15);
 
--- Insertar mesas
+-- Insertar mesas en las terrazas (4 mesas en cada terraza)
 INSERT INTO mesas (id_mesa, numero_mesa, id_sala, estado) VALUES
+-- Mesas Terraza 1
     (1, 101, 1, 'libre'),
     (2, 102, 1, 'libre'),
-    (3, 201, 2, 'libre'),
-    (4, 202, 2, 'libre'),
-    (5, 301, 3, 'libre'),
-    (6, 302, 3, 'libre'),
-    (7, 401, 4, 'libre'),
-    (8, 402, 4, 'libre'),
-    (9, 501, 5, 'libre'),
-    (10, 502, 5, 'libre'),
-    (11, 601, 6, 'libre'),
-    (12, 602, 6, 'libre'),
-    (13, 701, 7, 'libre'),
-    (14, 702, 7, 'libre'),
-    (15, 801, 8, 'libre'),
-    (16, 802, 8, 'libre');
+    (3, 103, 1, 'libre'),
+    (4, 104, 1, 'libre'),
+-- Mesas Terraza 2
+    (5, 201, 2, 'libre'),
+    (6, 202, 2, 'libre'),
+    (7, 203, 2, 'libre'),
+    (8, 204, 2, 'libre'),
+-- Mesas Terraza 3
+    (9, 301, 3, 'libre'),
+    (10, 302, 3, 'libre'),
+    (11, 303, 3, 'libre'),
+    (12, 304, 3, 'libre');
+
+
+-- Insertar mesas en los comedores (10 mesas en cada comedor)
+INSERT INTO mesas (id_mesa, numero_mesa, id_sala, estado) VALUES
+    -- Mesas para el Menjador 1
+    (13, 305, 3, 'libre'),
+    (14, 306, 3, 'libre'),
+    (15, 307, 3, 'libre'),
+    (16, 308, 3, 'libre'),
+    (17, 309, 3, 'libre'),
+    (18, 310, 3, 'libre'),
+    (19, 311, 3, 'libre'),
+    (20, 312, 3, 'libre'),
+    (21, 313, 3, 'libre'),
+    (22, 314, 3, 'libre'),
+    (23, 315, 3, 'libre'),
+    (24, 316, 3, 'libre'),
+    -- Mesas para el Menjador 2
+    (25, 401, 4, 'libre'),
+    (26, 402, 4, 'libre'),
+    (27, 403, 4, 'libre'),
+    (28, 404, 4, 'libre'),
+    (29, 405, 4, 'libre'),
+    (30, 406, 4, 'libre'),
+    (31, 407, 4, 'libre'),
+    (32, 408, 4, 'libre'),
+    (33, 409, 4, 'libre'),
+    (34, 410, 4, 'libre'),
+    (35, 411, 4 ,'libre'),
+    (36, 412, 4, 'libre');
+
+    -- Insertar mesas en las salas privadas (1 mesa por sala)
+INSERT INTO mesas (id_mesa, numero_mesa, id_sala, estado) VALUES
+    (37, 501, 6, 'libre'),
+    (38, 601, 7, 'libre'),
+    (39, 701, 8, 'libre'),
+    (40, 801, 9, 'libre');
 
 -- Insertar ocupaciones (registros de ocupación de mesas)
 INSERT INTO ocupaciones (id_ocupacion, id_usuario, id_mesa, fecha_inicio, fecha_fin) VALUES
     (1, 1, 1, '2023-11-20 12:30:00', '2023-11-20 14:30:00'),
     (2, 2, 3, '2023-11-20 18:00:00', '2023-11-20 19:30:00'),
     (3, 3, 5, '2023-11-20 20:00:00', '2023-11-20 22:00:00');
-
