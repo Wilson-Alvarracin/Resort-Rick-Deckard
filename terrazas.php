@@ -51,7 +51,7 @@ if (!isset($_SESSION['id'])) {
 
         <a href="./privado.php">
             <div class="image-item">
-                <img src="./img/private.jpg" alt="Imagen 3">
+                <img src="./img/private.jpg?priv=3" alt="Imagen 3">
                 <div class="image-text">
                     <h2>Terraza 3</h2>
                     <p>Aqui se pone la leyenda</p>
