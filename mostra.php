@@ -54,7 +54,7 @@ if (!isset($_SESSION['id'])) {
     </div>
     </a>
 
-    <a href="./privado.php">
+    <a href="./privado.php?priv=true">
         <div class="image-item">
             <img src="./img/private.jpg" alt="Imagen 3">
             <div class="image-text">
