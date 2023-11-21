@@ -74,7 +74,7 @@ INSERT INTO mesas (id_mesa, numero_mesa, id_sala, estado) VALUES
     (9, 301, 3, 'libre'),
     (10, 302, 3, 'libre'),
     (11, 303, 3, 'libre'),
-    (12, 304, 3, 'libre'),
+    (12, 304, 3, 'libre');
 
 
 -- Insertar mesas en los comedores (10 mesas en cada comedor)
@@ -90,24 +90,28 @@ INSERT INTO mesas (id_mesa, numero_mesa, id_sala, estado) VALUES
     (20, 312, 3, 'libre'),
     (21, 313, 3, 'libre'),
     (22, 314, 3, 'libre'),
+    (23, 315, 3, 'libre'),
+    (24, 316, 3, 'libre'),
     -- Mesas para el Menjador 2
-    (23, 401, 4, 'libre'),
-    (24, 402, 4, 'libre'),
-    (25, 403, 4, 'libre'),
-    (26, 404, 4, 'libre'),
-    (27, 405, 4, 'libre'),
-    (28, 406, 4, 'libre'),
-    (29, 407, 4, 'libre'),
-    (30, 408, 4, 'libre'),
-    (31, 409, 4, 'libre'),
-    (32, 410, 4, 'libre');
+    (25, 401, 4, 'libre'),
+    (26, 402, 4, 'libre'),
+    (27, 403, 4, 'libre'),
+    (28, 404, 4, 'libre'),
+    (29, 405, 4, 'libre'),
+    (30, 406, 4, 'libre'),
+    (31, 407, 4, 'libre'),
+    (32, 408, 4, 'libre'),
+    (33, 409, 4, 'libre'),
+    (34, 410, 4, 'libre'),
+    (35, 411, 4 ,'libre'),
+    (36, 412, 4, 'libre');
 
     -- Insertar mesas en las salas privadas (1 mesa por sala)
 INSERT INTO mesas (id_mesa, numero_mesa, id_sala, estado) VALUES
-    (39, 501, 6, 'libre'),
-    (41, 601, 7, 'libre'),
-    (43, 701, 8, 'libre'),
-    (45, 801, 9, 'libre');
+    (37, 501, 6, 'libre'),
+    (38, 601, 7, 'libre'),
+    (39, 701, 8, 'libre'),
+    (40, 801, 9, 'libre');
 
 -- Insertar ocupaciones (registros de ocupación de mesas)
 INSERT INTO ocupaciones (id_ocupacion, id_usuario, id_mesa, fecha_inicio, fecha_fin) VALUES
