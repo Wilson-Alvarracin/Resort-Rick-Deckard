@@ -32,7 +32,6 @@ if (!isset($_SESSION['id'])) {
 
             </div>
             <a href="./inc/salir.php"><button class="logoutboton"><img class="logoutimg" src="./img/LOGOUT.png" alt=""></button></a>
-
         </div>
     </nav>
     <div class="image-grid">
