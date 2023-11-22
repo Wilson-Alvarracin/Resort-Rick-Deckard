@@ -3,6 +3,7 @@ include_once('./conexion.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['numero_mesa'])) {
+        $id_sala = $_POST['id_sala'];
         $numero_mesa = $_POST['numero_mesa'];
         $sql = "SELECT numero_mesa, estado FROM mesas WHERE numero_mesa = ? ;";
         $stmt = mysqli_prepare($conn, $sql);
@@ -22,7 +23,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             mysqli_stmt_bind_param($L_update_stmt, "i", $numero_mesa);
                             mysqli_stmt_execute($L_update_stmt);
 
-                            echo "Ahora la mesa está OCUPADA";
+                            if ($id_sala = 1) {
+                                header('Location: ../terrazas/terraza1.php');
+                            } elseif ($id_sala = 2) {
+                                header('Location: ../terrazas/terraza2.php');
+                            }
                             die();
                         } else {
                             echo "Error";
@@ -38,7 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             mysqli_stmt_bind_param($O_update_stmt, "i", $numero_mesa);
                             mysqli_stmt_execute($O_update_stmt);
 
-                            echo "Ahora la mesa está LIBRE";
+                            if ($id_sala = 1) {
+                                header('Location: ../terrazas/terraza1.php');
+                            } elseif ($id_sala = 2) {
+                                header('Location: ../terrazas/terraza2.php');
+                            }
                             die();
                         } else {
                             echo "Error";

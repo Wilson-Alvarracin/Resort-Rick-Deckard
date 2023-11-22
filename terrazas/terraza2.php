@@ -43,6 +43,11 @@ if (!isset($_SESSION['id'])) {
                 <img class="filtro" src="../img/mesas.png" alt="Imagen 1">
                 <div class="image-text">
                     <h2>Mesa 201</h2>
+                    <form method='POST' action="../inc/procesar.php">
+                        <input type="hidden" name="id_sala" value="2" >
+                        <input type="hidden" name="numero_mesa" value="201">
+                        <input type="submit">
+                </form>
                     <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
                 </div>
             </div>
@@ -52,6 +57,11 @@ if (!isset($_SESSION['id'])) {
             <img class="filtro" src="../img/mesas.png" alt="Imagen 2">
             <div class="image-text">
                 <h2>Mesa 202</h2>
+                <form method='POST' action="../inc/procesar.php">
+                        <input type="hidden" name="id_sala" value="2" >
+                        <input type="hidden" name="numero_mesa" value="202">
+                        <input type="submit">
+                </form>
                 <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
             </div>
     </div>
@@ -62,6 +72,11 @@ if (!isset($_SESSION['id'])) {
             <img class="filtro" src="../img/mesas.png" alt="Imagen 3">
             <div class="image-text">
                 <h2>Mesa 203</h2>
+                <form method='POST' action="../inc/procesar.php">
+                        <input type="hidden" name="id_sala" value="2" >
+                        <input type="hidden" name="numero_mesa" value="203">
+                        <input type="submit">
+                </form>
                 <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
             </div>
         </div>
@@ -71,6 +86,11 @@ if (!isset($_SESSION['id'])) {
                 <img class="filtro" src="../img/mesas.png" alt="Imagen 1">
                 <div class="image-text">
                     <h2>Mesa 204</h2>
+                    <form method='POST' action="../inc/procesar.php">
+                        <input type="hidden" name="id_sala" value="2" >
+                        <input type="hidden" name="numero_mesa" value="204">
+                        <input type="submit">
+                </form>
                     <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
                 </div>
             </div>

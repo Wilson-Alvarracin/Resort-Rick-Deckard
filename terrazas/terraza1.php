@@ -47,7 +47,18 @@ if (!isset($_SESSION['id'])) {
                         <input type="hidden" name="numero_mesa" value="101">
                         <input type="submit">
                     </form>
-                    <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
+                    <p>Estado: 
+                    <?php 
+                    // include_once('../inc/connexion.php');
+
+                    // $sql = "SELECT estado FROM mesas WHERE numero_mesa = ?";
+
+                    // $stmt = mysqli_prepare($conn, $sql);
+                    // mysqli_stmt_bind_param($stmt, "i", $numero_mesa);
+                    // mysqli_stmt_execute($stmt);
+                    // mysqli_stmt_store_result($stmt);
+                    
+                    ?></p>
                 </div>
             </div>
     </a>
@@ -57,6 +68,7 @@ if (!isset($_SESSION['id'])) {
             <div class="image-text">
                 <h2>Mesa 102</h2>
                 <form method='POST' action="../inc/procesar.php">
+                        <input type="hidden" name="id_sala" value="1" >
                         <input type="hidden" name="numero_mesa" value="102">
                         <input type="submit">
                 </form>
@@ -71,6 +83,7 @@ if (!isset($_SESSION['id'])) {
             <div class="image-text">
                 <h2>Mesa 103</h2>
                 <form method='POST' action="../inc/procesar.php">
+                        <input type="hidden" name="id_sala" value="1" >
                         <input type="hidden" name="numero_mesa" value="103">
                         <input type="submit">
                 </form>
@@ -84,6 +97,7 @@ if (!isset($_SESSION['id'])) {
                 <div class="image-text">
                     <h2>Mesa 104</h2>
                     <form method='POST' action="../inc/procesar.php">
+                        <input type="hidden" name="id_sala" value="1" >
                         <input type="hidden" name="numero_mesa" value="104">
                         <input type="submit">
                     </form>
