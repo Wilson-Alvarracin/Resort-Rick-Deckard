@@ -37,68 +37,46 @@ if (!isset($_SESSION['id'])) {
             </div>
         </div>
     </nav>
-    <div class="image-grid">
-        <a>
-            <div class="image-item">
-                <img class="filtro" src="./img/privada4.jpg" alt="Imagen 1">
-                <div class="image-text">
-                    <h2>Sala Privada 1</h2>
-                    <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
-                </div>
-            </div>
-        </a>
-        <a>
-            <div class="image-item">
-                <img class="filtro" src="./img/privada3.jpg" alt="Imagen 2">
-                <div class="image-text">
-                    <h2>Sala Privada 2</h2>
-                    <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
-                </div>
-            </div>
-        </a>
 
-        <a>
-            <div class="image-item">
-                <img class="filtro" src="./img/privada2.jpg" alt="Imagen 3">
-                <div class="image-text">
-                    <h2>Sala Privada 3</h2>
-                    <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
-                </div>
-            </div>
-        </a>
-        <a>
-            <div class="image-item">
-                <img class="filtro" src="./img/privada1.jpg" alt="Imagen 1">
-                <div class="image-text">
-                    <h2>Sala Privada 4</h2>
-                    <p>Estado: <?php echo "ocupada/no ocupada" ?></p>
-                </div>
-            </div>
-        </a>
-    </div>
-</body>
+        <div class="centrado">
+    <!----------------FIN DE LA BARRA DE NAVEGACION --------------------->
+    <?php
 
-</html>
-<!-- 
-}else{
-    if (isset($_GET['priv'])) {
-        $typsala = "Privada";
-        if(isset($_SESSION['id'])){
-            include './inc/conexion.php';
-        }
-        // echo "sapo";
-        $sql = "SELECT * FROM salas WHERE tipo_sala = ? ;";
-        $stmt = mysqli_prepare($conn,$sql);
-        mysqli_stmt_bind_param($stmt, "s",$typsala);
-        mysqli_stmt_execute($stmt);
-        $res = mysqli_stmt_get_result($stmt);
-        foreach ($res as $mesa) {
-            # code...
-            echo $mesa['nombre_sala']," - ",$mesa['tipo_sala'];
-            echo '<br>';
-        }
+include('./inc/conexion.php');
+$sql = "SELECT * FROM mesas WHERE id_sala = ?";
+$stmt = mysqli_prepare($conn, $sql);
+$id_sala = 6;
+mysqli_stmt_bind_param($stmt, 'i', $id_sala);
+mysqli_stmt_execute($stmt);
+$res = mysqli_stmt_get_result($stmt);
+echo "<div class='image-grid'>";
+
+while ($mesa = mysqli_fetch_assoc($res)) {
+    echo '<a><div class="image-item">';
+    
+    if ($mesa['estado'] == "ocupada") {
+        echo "<img class='filtro' src='./img/privada".$mesa['numero_mesa'].".jpg' alt='Imagen 1'>";
+    } else {
+        echo "<img src='./img/privada".$mesa['numero_mesa'].".jpg' alt='Imagen 1'>";
     }
+    
+    echo '<div class="image-text"><h2> Sala Privada nº '.$mesa['numero_mesa'].'</h2>';
+    echo '<p class="diss">'.$mesa['estado'].'</p>';
+    
+    echo "<form method='POST' action='./inc/procesar.php'>";
+    echo "<input type='hidden' name='id_sala' value=".$mesa['id_sala'].">";
+    echo "<input type='hidden' name='numero_mesa' value=".$mesa['numero_mesa'].">";
+    echo "<input type='submit'>";
+    echo "</form>";
 
+    echo '</div></div></a>';
 }
+echo "</div>";
 
->>>>>>> 611986d3d5b61adb3fc40f6cf8901c00a366f59c -->
+// Libera los recursos después de usarlos
+mysqli_stmt_close($stmt);
+?>
+</div>
+
+</body>
+</html>

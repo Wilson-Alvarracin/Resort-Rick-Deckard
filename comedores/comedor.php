@@ -15,8 +15,8 @@ if (!isset($_SESSION['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RICK DECKARD - TERRAZA 1</title>
-    <link rel="stylesheet" href="../css/terraza.css">
+    <title>RICK DECKARD - COMEDOR 1</title>
+    <link rel="stylesheet" href="../css/comedor.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
@@ -28,19 +28,20 @@ if (!isset($_SESSION['id'])) {
                 <img src="../img/LOGORICK _Blanco.png" alt="" width="100" height="90">
             </a>
             <div class="saludo">
-            <b>¡Bienvenido al portal, <?php echo $_SESSION['user'];?>!</b>
+            <b style="color:white">¡Bienvenido al portal, <?php echo $_SESSION['user'];?>!</b>
+
             </div>
             <div>
-            <a href="../terrazas.php"><button class="atrasboton"><img class="atrasimg" src="../img/atras.png" alt=""></button></a>
+            <a href="../comedores.php"><button class="atrasboton"><img class="atrasimg" src="../img/atras.png" alt=""></button></a>
             <a href="../inc/salir.php"><button class="logoutboton"><img class="logoutimg" src="../img/LOGOUT.png" alt=""></button></a>
             </div>
         </div>
     </nav>
-
+    <div class="centrado">
     <!----------------FIN DE LA BARRA DE NAVEGACION --------------------->
     <?php
     if (isset($_GET['id'])) {
-        include ('./../inc/conexion.php');
+        include './../inc/conexion.php';
         $id = trim(mysqli_real_escape_string($conn,$_GET['id']));
         // echo "sapo";
         $sql = "SELECT * FROM mesas WHERE id_sala = ?";
@@ -53,6 +54,7 @@ if (!isset($_SESSION['id'])) {
 
         echo '<div class="image-grid">';
         foreach ($res as $mesa) {
+            # code...
             echo'<a><div class="image-item">';
             if ($mesa['estado'] == "ocupada") {
                 echo '<img class="filtro" src="../img/mesas.png" alt="Imagen 1">';
@@ -61,7 +63,6 @@ if (!isset($_SESSION['id'])) {
                 echo "<form method='POST' action='../inc/procesar.php'>";
                 echo "<input type='hidden' name='id_sala' value=".$mesa['id_sala'].">";
                 echo "<input type='hidden' name='numero_mesa' value=".$mesa['numero_mesa'].">";
-                echo "<input type='hidden' name='id_mesa' value=".$mesa['id_mesa'].">";
                 echo "<input type='submit'>";
                 echo "</form>";
             }else{
@@ -71,7 +72,6 @@ if (!isset($_SESSION['id'])) {
                 echo "<form method='POST' action='../inc/procesar.php'>";
                 echo "<input type='hidden' name='id_sala' value=".$mesa['id_sala'].">";
                 echo "<input type='hidden' name='numero_mesa' value=".$mesa['numero_mesa'].">";
-                echo "<input type='hidden' name='id_mesa' value=".$mesa['id_mesa'].">";
                 echo "<input type='submit'>";
                 echo "</form>";
 
@@ -83,6 +83,7 @@ if (!isset($_SESSION['id'])) {
     }
     ?>
 </form>
+</div>
 </body>
 
 </html>

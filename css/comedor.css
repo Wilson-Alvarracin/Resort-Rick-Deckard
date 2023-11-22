@@ -82,21 +82,13 @@ body {
     filter: brightness(0%);
 }
 
-.centrado {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-left: 20%;
-}
-
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 100px;
     margin: 0 auto;
     padding-top: 0%;
-    width: 200vh;
+    width: 120vh;
 }
 
 .filtro {

@@ -32,13 +32,13 @@ if (!isset($_SESSION['id'])) {
 
             </div>     
             <div>      
-            <a href="javascript:history.back()"><button class="atrasboton"><img class="atrasimg" src="./img/atras.png" alt=""></button></a>
+            <a href="./mostra.php"><button class="atrasboton"><img class="atrasimg" src="./img/atras.png" alt=""></button></a>
             <a href="./inc/salir.php"><button class="logoutboton"><img class="logoutimg" src="./img/LOGOUT.png" alt=""></button></a>
             </div>
         </div>
     </nav>
     <div class="image-grid">
-        <a href="./comedores/comedor1.php">
+        <a href="./comedores/comedor.php?id=4">
             <div class="image-item">
                 <img src="./img/comedor1.jpg" alt="Imagen 1">
                 <div class="image-text">
@@ -47,7 +47,7 @@ if (!isset($_SESSION['id'])) {
                 </div>
             </div>
         </a>
-        <a href="./comedores/comedor2.php">
+        <a href="./comedores/comedor.php?id=5">
             <div class="image-item">
                 <img src="./img/comedor2.jpg" alt="Imagen 2">
                 <div class="image-text">
