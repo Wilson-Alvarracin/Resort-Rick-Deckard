@@ -24,9 +24,13 @@ if (!isset($_SESSION['id'])) {
 <body>
     <nav class="navbar navbar-light bg-lights position-top">
         <div class="container">
+        <div>
             <a class="navbar-brand " href="../mostra.php">
-                <img src="../img/LOGORICK _Blanco.png" alt="" width="100" height="90">
+                <img src="./img/LOGORICK _Blanco.png" alt="" width="100" height="90">
+                <a href="../registro.php"><button class="atrasboton"><img class="atrasimg" src="./img/libro.png" alt=""></button></a>
             </a>
+            </div>
+
             <div class="saludo">
             <b>¡Bienvenido al portal, <?php echo $_SESSION['user'];?>!</b>
             </div>
@@ -53,7 +57,6 @@ if (!isset($_SESSION['id'])) {
 
         echo '<div class="image-grid">';
         foreach ($res as $mesa) {
-            # code...
             echo'<a><div class="image-item">';
             if ($mesa['estado'] == "ocupada") {
                 echo '<img class="filtro" src="../img/mesas.png" alt="Imagen 1">';
@@ -65,13 +68,17 @@ if (!isset($_SESSION['id'])) {
                 echo '<p>'.$mesa['estado'].'</p>';
 
             }
+            echo '<form method="POST" action="../inc/procesar.php">
+            <input type="hidden" name="numero_mesa" value="'.$mesa['numero_mesa'].'">
+            <input type="submit></form> ';
             echo '</div></div></a>';
         }
+        echo '</div>';
+
     }else{
 
     }
     ?>
-</form>
 </body>
 
 </html>
