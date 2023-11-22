@@ -30,6 +30,7 @@ if (!isset($_SESSION['id'])) {
                 <a href="../registro.php"><button class="atrasboton"><img class="atrasimg" src="./img/libro.png" alt=""></button></a>
             </a>
             </div>
+
             <div class="saludo">
             <b>¡Bienvenido al portal, <?php echo $_SESSION['user'];?>!</b>
             </div>
@@ -69,17 +70,15 @@ if (!isset($_SESSION['id'])) {
             }
             echo '<form method="POST" action="../inc/procesar.php">
             <input type="hidden" name="numero_mesa" value="'.$mesa['numero_mesa'].'">
-            <input type="submit">
-        </form> ';
+            <input type="submit></form> ';
             echo '</div></div></a>';
         }
         echo '</div>';
+
     }else{
 
     }
     ?>
-    <form action="" method="post"></form>
-
 </body>
 
 </html>
