@@ -28,10 +28,14 @@
                             <div class="inputs">
                                 <label for="form2Example17">Nombre Usuario:</label>
                                 <input type="text" id="user" name="user" class="form-control" />
+                                <p id="userError" style="color: red; text-align: center;"></p>
+
                             </div>
                             <div class="inputs">
                                 <label for="contrasena">Contraseña:</label>
                                 <input type="password" id="password" name="password" id="form2Example27" class="form-control"/>
+                                <p id="passwordError" style="color: red; text-align: center;"></p>
+
 
                             </div>
                             <?php if (isset($_GET['error'])) {echo " <br> <br> <p style='text-align: center;'>Usuario o contraseña incorrecto.</p>"; } ?>
@@ -40,7 +44,9 @@
                             <?php if (isset($_GET['emptyPwd'])) {echo " <br> <br> <p style='text-align: center;'>No has rellenado la contraseña</p>"; } ?>
                             <?php if (isset($_GET['empty'])) {echo " <br> <br> <p style='text-align: center;'>El usuario y la contraseña son obligatorios.</p>"; } ?>
                             <div class="flex">
+
                                 <input type="submit" class="boton" name="inicio" value="Iniciar sesión">
+                                
                             </div>
                                                 </form>
                     </div>
@@ -48,6 +54,7 @@
             </div>
         </form>
     </section>
+    <script src="./js/login.js"></script>
 </body>
 
 
