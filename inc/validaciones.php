@@ -9,6 +9,8 @@ if (!filter_has_var(INPUT_POST, 'inicio')) {
 
     $user = $_POST["user"];
     $password = $_POST["password"];
+    $username = $_POST['hiddenUsername'];
+
 
     if (empty($user) || empty($password)) {
         header("Location: ../index.php?empty");
@@ -28,7 +30,7 @@ if (!filter_has_var(INPUT_POST, 'inicio')) {
             if (password_verify($password, $contrasena)) {
                 $_SESSION["id"] = $id_usuario;
                 $_SESSION["user"] = $nombre_user;
-                header("Location: ../mostra.php");
+                header("Location: ../home.php?username=$nombre_user");
                 exit();
             } else {
                 header("Location: ../index.php?error");
