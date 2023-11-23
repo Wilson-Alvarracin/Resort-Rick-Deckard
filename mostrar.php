@@ -19,7 +19,7 @@
     <nav class="navbar navbar-light bg-lights position-top">
         <div class="container">
         <div>
-            <a class="navbar-brand " href="./mostra.php">
+            <a class="navbar-brand " href="./home.php">
                 <img src="./img/LOGORICK _Blanco.png" alt="" width="100" height="90">
                 <a href="./registro.php"><button class="atrasboton"><img class="atrasimg" src="./img/libro.png" alt=""></button></a>
             </a>
@@ -29,7 +29,7 @@
 
             </div>     
             <div>      
-            <a href="javascript:history.back()"><button class="atrasboton"><img class="atrasimg" src="./img/atras.png" alt=""></button></a>
+            <a href="./home.php"><button class="atrasboton"><img class="atrasimg" src="./img/atras.png" alt=""></button></a>
             <a href="./inc/salir.php"><button class="logoutboton"><img class="logoutimg" src="./img/LOGOUT.png" alt=""></button></a>
             </div>
         </div>
@@ -78,6 +78,7 @@ if (!isset($_SESSION['id'])) {
             echo '<form method="POST" action="./inc/procesar.php">
             <input type="hidden" name="numero_mesa" value="'.$sala['id_mesa'].'">
             <input type="hidden" name="id_sala" value="'.$sala['id_sala'].'">
+            <input type="hidden" name="id_mesa" value="'.$sala['id_sala'].'">
             <input type="hidden" name="numero_mesa" value="'.$sala['numero_mesa'].'">
             <input type="submit"></form>';
         }

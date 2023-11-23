@@ -23,14 +23,19 @@ if (!isset($_SESSION['id'])) {
 <body>
     <nav class="navbar navbar-light bg-lights position-top">
         <div class="container">
+        <div>
             <a class="navbar-brand " href="./home.php">
                 <img src="./img/LOGORICK _Blanco.png" alt="" width="100" height="90">
+                <a href="./registro.php"><button class="atrasboton"><img class="atrasimg" src="./img/libro.png" alt=""></button></a>
+
             </a>
+            </div>
             <div class="saludo">
             <b>¡Bienvenido al portal, <?php echo $_SESSION['user'];?>!</b>
             </div>
             <div>
-            <a href="javascript:history.back()"><button class="atrasboton"><img class="atrasimg" src="./img/atras.png" alt=""></button></a>
+            
+            <a href="./home.php"><button class="atrasboton"><img class="atrasimg" src="./img/atras.png" alt=""></button></a>
             <a href="./inc/salir.php"><button class="logoutboton"><img class="logoutimg" src="./img/LOGOUT.png" alt=""></button></a>
             </div>
         </div>
@@ -68,9 +73,12 @@ if (!isset($_SESSION['id'])) {
                 echo '<p>'.$mesa['estado'].'</p>';
 
             }
-            echo '<form method="POST" action="../inc/procesar.php">
-            <input type="hidden" name="numero_mesa" value="'.$mesa['id_mesa'].'">
-            <input type="submit"></form>';
+            echo "<form method='POST' action='./inc/procesar.php'>";
+                echo "<input type='hidden' name='id_sala' value=".$mesa['id_sala'].">";
+                echo "<input type='hidden' name='id_mesa' value=".$mesa['id_mesa'].">";
+                echo "<input type='hidden' name='numero_mesa' value=".$mesa['numero_mesa'].">";
+                echo "<input type='submit'>";
+                echo "</form>";
             echo '</div></div></a>';
 
             if( $i == 2){
