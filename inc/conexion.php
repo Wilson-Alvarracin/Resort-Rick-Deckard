@@ -1,4 +1,7 @@
 <?php
+
+
+
  $dbserver="localhost";
  $dbuser="root";
  $dbpwd="";

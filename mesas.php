@@ -47,13 +47,18 @@ if (!isset($_SESSION['id'])) {
         header("Location: ./home.php");
         exit;
     }else{
-        require './inc/conexion.php';
-        $id = trim(mysqli_real_escape_string($conn,$_GET['id']));
-        $sql = "SELECT * FROM mesas WHERE id_sala = ?";
-        $stmt = mysqli_prepare($conn,$sql);
-        mysqli_stmt_bind_param($stmt, "s",$id);
-        mysqli_stmt_execute($stmt);
-        $res = mysqli_stmt_get_result($stmt);
+        try{
+            require './inc/conexion.php';
+            $id = trim(mysqli_real_escape_string($conn,$_GET['id']));
+            $sql = "SELECT * FROM mesas WHERE id_sala = ?";
+            $stmt = mysqli_prepare($conn,$sql);
+            mysqli_stmt_bind_param($stmt, "s",$id);
+            mysqli_stmt_execute($stmt);
+            $res = mysqli_stmt_get_result($stmt);
+            
+        }catch(Exception $e){
+            echo "Error: " . $e->getMessage();
+        }
         
 
         echo '<div class="centrado">';

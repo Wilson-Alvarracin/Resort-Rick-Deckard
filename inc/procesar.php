@@ -1,6 +1,17 @@
 <?php
-        session_start();
 
+session_start();
+if (!isset($_SESSION['id'])) {
+    header("Location: ./index.php");
+    exit;
+} else if (isset($_GET['logout'])) {
+    session_destroy();
+    header("Location: ./index.php");
+    exit;
+}
+
+try{
+    
 include_once('./conexion.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -120,5 +131,10 @@ $id_usuario = $_SESSION['id'];
     }
 } else {
     echo "Error: Método de solicitud no válido.";
+}
+}catch(Exception $e){
+    echo "Error:" . $e->getMessage();
+    die();
+
 }
 ?>
