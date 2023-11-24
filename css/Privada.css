@@ -64,7 +64,7 @@
 }
 
 .filtro {
-    filter: brightness(0%);
+    filter: brightness(20%);
 }
 
 .logoutboton:hover {
