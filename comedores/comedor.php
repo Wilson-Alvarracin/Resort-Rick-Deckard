@@ -62,6 +62,7 @@ if (!isset($_SESSION['id'])) {
                 echo '<p class="diss">'.$mesa['estado'].'</p>';
                 echo "<form method='POST' action='../inc/procesar.php'>";
                 echo "<input type='hidden' name='id_sala' value=".$mesa['id_sala'].">";
+                echo "<input type='hidden' name='id_mesa' value=".$mesa['id_mesa'].">";
                 echo "<input type='hidden' name='numero_mesa' value=".$mesa['numero_mesa'].">";
                 echo "<input type='submit'>";
                 echo "</form>";
@@ -71,6 +72,7 @@ if (!isset($_SESSION['id'])) {
                 echo '<p>'.$mesa['estado'].'</p>';
                 echo "<form method='POST' action='../inc/procesar.php'>";
                 echo "<input type='hidden' name='id_sala' value=".$mesa['id_sala'].">";
+                echo "<input type='hidden' name='id_mesa' value=".$mesa['id_mesa'].">";
                 echo "<input type='hidden' name='numero_mesa' value=".$mesa['numero_mesa'].">";
                 echo "<input type='submit'>";
                 echo "</form>";

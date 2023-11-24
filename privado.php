@@ -24,9 +24,13 @@ if (!isset($_SESSION['id'])) {
 <body>
     <nav class="navbar navbar-light bg-lights position-top">
         <div class="container">
-            <a class="navbar-brand " href="./mostra.php">
+        <div>
+            <a class="navbar-brand " href="#">
                 <img src="./img/LOGORICK _Blanco.png" alt="" width="100" height="90">
+                <a href="./registro.php"><button class="atrasboton"><img class="atrasimg" src="./img/libro.png" alt=""></button></a>
+
             </a>
+            </div>
             <div class="saludo">
             <b style="color:white">¡Bienvenido al portal, <?php echo $_SESSION['user'];?>!</b>
 
@@ -56,18 +60,27 @@ while ($mesa = mysqli_fetch_assoc($res)) {
     
     if ($mesa['estado'] == "ocupada") {
         echo "<img class='filtro' src='./img/privada".$mesa['numero_mesa'].".jpg' alt='Imagen 1'>";
+        echo '<div class="image-text"><h2> Sala Privada nº '.$mesa['numero_mesa'].'</h2>';
+        echo '<p class="diss">'.$mesa['estado'].'</p>';
+        echo "<form method='POST' action='./inc/procesar.php'>";
+        echo "<input type='hidden' name='id_sala' value=".$mesa['id_sala'].">";
+        echo "<input type='hidden' name='id_mesa' value=".$mesa['id_mesa'].">";
+        echo "<input type='hidden' name='numero_mesa' value=".$mesa['numero_mesa'].">";
+        echo "<input type='submit'>";
+        echo "</form>";
     } else {
         echo "<img src='./img/privada".$mesa['numero_mesa'].".jpg' alt='Imagen 1'>";
+        echo '<div class="image-text"><h2> Sala Privada nº '.$mesa['numero_mesa'].'</h2>';
+        echo '<p class="diss">'.$mesa['estado'].'</p>';
+        echo "<form method='POST' action='./inc/procesar.php'>";
+        echo "<input type='hidden' name='id_sala' value=".$mesa['id_sala'].">";
+        echo "<input type='hidden' name='id_mesa' value=".$mesa['id_mesa'].">";
+        echo "<input type='hidden' name='numero_mesa' value=".$mesa['numero_mesa'].">";
+        echo "<input type='submit'>";
+        echo "</form>";
     }
     
-    echo '<div class="image-text"><h2> Sala Privada nº '.$mesa['numero_mesa'].'</h2>';
-    echo '<p class="diss">'.$mesa['estado'].'</p>';
-    
-    echo "<form method='POST' action='./inc/procesar.php'>";
-    echo "<input type='hidden' name='id_sala' value=".$mesa['id_sala'].">";
-    echo "<input type='hidden' name='numero_mesa' value=".$mesa['numero_mesa'].">";
-    echo "<input type='submit'>";
-    echo "</form>";
+
 
     echo '</div></div></a>';
 }
