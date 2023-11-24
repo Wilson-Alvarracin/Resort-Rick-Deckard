@@ -72,17 +72,27 @@ if (!isset($_SESSION['id'])) {
                 echo '<img class="filtro" src="./img/mesas.png" alt="Imagen 1">';
                 echo '<div class="image-text"><h2> Mesa'.$mesa['numero_mesa'].'</h2>';  
                 echo '<p class="diss">'.$mesa['estado'].'</p>';
+                $clase = 'class ="btn2 danger  btn-block" value="Desocupar" ';
             }else{
                 echo '<img class="" src="./img/mesas.png" alt="Imagen 1">';
                 echo '<div class="image-text"><h2> Mesa'.$mesa['numero_mesa'].'</h2>';
                 echo '<p>'.$mesa['estado'].'</p>';
+                $clase = 'class ="btn2 success btn-block" value="Ocupar" ';
+
 
             }
             echo "<form method='POST' action='./inc/procesar.php'>";
                 echo "<input type='hidden' name='id_sala' value=".$mesa['id_sala'].">";
                 echo "<input type='hidden' name='id_mesa' value=".$mesa['id_mesa'].">";
                 echo "<input type='hidden' name='numero_mesa' value=".$mesa['numero_mesa'].">";
-                echo "<input type='submit'>";
+                echo "<input ".$clase."type='submit'>";
+                // if ($mesa['estado'] == "ocupada"){
+                //     echo "<input class='btn2 danger btn-block' value='Ocupar' type='submit'>";
+
+                // }else{
+                //     echo "<input class='btn2 success btn-block' value='Echar a la gente' type='submit'>";
+
+                // }
                 echo "</form>";
             echo '</div></div></a>';
 
