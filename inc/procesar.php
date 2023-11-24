@@ -9,13 +9,13 @@ if (!isset($_SESSION['id'])) {
     header("Location: ./index.php");
     exit;
 }
-
-try{
     
 include_once('./conexion.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST['numero_mesa'])) {
+        try {
+
         $id_sala = $_POST['id_sala'];
         $numero_mesa = $_POST['numero_mesa'];
         $sql = "SELECT numero_mesa, estado FROM mesas WHERE numero_mesa = ?;";
@@ -32,6 +32,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_stmt_fetch($stmt_check);
             mysqli_stmt_close($stmt_check);
 
+        }catch(Exception $e){
+            echo "Error:" . $e->getMessage();
+            die();
+        
+        }
+
         if ($stmt) {
             mysqli_stmt_bind_param($stmt, "i", $numero_mesa);
             mysqli_stmt_execute($stmt);
@@ -42,6 +48,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 mysqli_stmt_fetch($stmt);
 
                 if ($estado == 'libre') {
+                    try {
+                    mysqli_autocommit($conn, false);
+                    mysqli_begin_transaction($conn, MYSQLI_TRANS_START_READ_WRITE);
+
                     $L_update_sql = "UPDATE mesas SET estado = 'ocupada' WHERE numero_mesa = ?";
                     $L_update_stmt = mysqli_prepare($conn, $L_update_sql);
 
@@ -65,6 +75,11 @@ $id_usuario = $_SESSION['id'];
      mysqli_stmt_execute($stmt_update_estado);
      mysqli_stmt_close($stmt_update_estado);
 
+    }catch(Exception $e){
+        echo "Error:" . $e->getMessage();
+        die();
+    
+    }
 
                     if ($L_update_stmt) {
                         mysqli_stmt_bind_param($L_update_stmt, "i", $numero_mesa);
@@ -90,6 +105,12 @@ $id_usuario = $_SESSION['id'];
 
                     mysqli_stmt_close($L_update_stmt);
                 } elseif ($estado == 'ocupada') {
+                    
+                    try {
+
+                        mysqli_autocommit($conn, false);
+                        mysqli_begin_transaction($conn, MYSQLI_TRANS_START_READ_WRITE);
+
                     $O_update_sql = "UPDATE mesas SET estado = 'libre' WHERE numero_mesa = ?";
                     $O_update_stmt = mysqli_prepare($conn, $O_update_sql);
                     mysqli_stmt_bind_param($O_update_stmt, "i", $numero_mesa);
@@ -105,6 +126,11 @@ $id_usuario = $_SESSION['id'];
                         mysqli_stmt_execute($stmt_update);
                         mysqli_stmt_close($stmt_update);
         
+                    }catch(Exception $e){
+                        echo "Error:" . $e->getMessage();
+                        die();
+                    
+                    }
 
                         if ($id_sala == 1 || $id_sala == 2 || $id_sala == 3) {
                             header("Location: ../mesas.php?id=".$id_sala."");
@@ -123,6 +149,7 @@ $id_usuario = $_SESSION['id'];
             }
 
             mysqli_stmt_close($stmt);
+            mysqli_close($conn);
         } else {
             echo "Error al preparar la consulta SELECT.";
         }
@@ -131,10 +158,5 @@ $id_usuario = $_SESSION['id'];
     }
 } else {
     echo "Error: Método de solicitud no válido.";
-}
-}catch(Exception $e){
-    echo "Error:" . $e->getMessage();
-    die();
-
 }
 ?>
