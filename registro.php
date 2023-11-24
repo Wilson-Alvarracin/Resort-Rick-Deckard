@@ -148,6 +148,10 @@ if (!isset($_SESSION['id'])) {
             </select>
 
             <button type="submit">Filtrar</button>
+            <button type="submit">
+            <a style="text-decoration: none; color: black;" href="./registro.php">Borrar Flitros</a>    
+            </button>
+
         </form>
 
         <?php
