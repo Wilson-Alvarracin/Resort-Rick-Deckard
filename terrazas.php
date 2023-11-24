@@ -24,9 +24,12 @@ if (!isset($_SESSION['id'])) {
 <body>
     <nav class="navbar navbar-light bg-lights position-top">
         <div class="container">
+        <div>
             <a class="navbar-brand " href="./mostra.php">
                 <img src="./img/LOGORICK _Blanco.png" alt="" width="100" height="90">
+                <a href="./registro.php"><button class="atrasboton"><img class="atrasimg" src="./img/libro.png" alt=""></button></a>
             </a>
+            </div>
             <div class="saludo">
             <b style="color:white">¡Bienvenido al portal, <?php echo $_SESSION['user'];?>!</b>
 
