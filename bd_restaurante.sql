@@ -4,14 +4,14 @@ USE bd_restaurante;
 
 -- Tabla de usuarios para los camareros
 CREATE TABLE usuarios (
-    id_usuario INT PRIMARY KEY,
+    id_usuario INT PRIMARY KEY AUTO_INCREMENT,
     nombre_user VARCHAR(255),
     contrasena VARCHAR(60)
 );
 
 -- Tabla de salas para diferenciar mesas
 CREATE TABLE salas (
-    id_sala INT PRIMARY KEY,
+    id_sala INT PRIMARY KEY AUTO_INCREMENT,
     nombre_sala VARCHAR(255),
     tipo_sala VARCHAR(50),         -- Tipo de sala (Terraza, Comedor, Sala Privada...)
     capacidad INT                  -- Capacidad de la sala (número de mesas o personas)                    
@@ -19,7 +19,7 @@ CREATE TABLE salas (
 
 -- Tabla de mesas 
 CREATE TABLE mesas (
-    id_mesa INT PRIMARY KEY,
+    id_mesa INT PRIMARY KEY AUTO_INCREMENT,
     numero_mesa INT,
     id_sala INT,
     estado ENUM('libre','ocupada') DEFAULT ('libre'),   -- El estado de la mesa (libre u ocupada)
@@ -28,11 +28,11 @@ CREATE TABLE mesas (
 
 -- Tabla para los registros de ocupación de las mesas
 CREATE TABLE ocupaciones (
-    id_ocupacion INT PRIMARY KEY,
+    id_ocupacion INT PRIMARY KEY AUTO_INCREMENT,
     id_usuario INT,
     id_mesa INT,
     fecha_inicio DATETIME DEFAULT CURRENT_TIMESTAMP,    -- Fecha y hora del inicio de la ocupación
-    fecha_fin DATETIME DEFAULT CURRENT_TIMESTAMP,       -- Fecha y hora del final de la ocupación
+    fecha_fin DATETIME,       -- Fecha y hora del final de la ocupación
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario), -- Permite saber quién ha hecho una ocupación
     FOREIGN KEY (id_mesa) REFERENCES mesas(id_mesa) -- Permite saber qué mesa ha estado ocupada
 );

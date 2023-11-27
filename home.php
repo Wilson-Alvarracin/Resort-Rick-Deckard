@@ -18,6 +18,10 @@ if (!isset($_SESSION['id'])) {
     <title>RICK DECKARD - HOME</title>
     <link rel="stylesheet" href="./css/home.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ <!-- Enlace a SweetAlert -->
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Enlace a tu archivo popup.js -->
+  <script src="./js/popup.js" defer></script>
 </head>
 
 <body>
@@ -77,7 +81,8 @@ if (!isset($_SESSION['id'])) {
                 imageHeight: 100,
                 title: `Bienvenido/a ${username}`,
                 showConfirmButton: false,
-                timer: 3500
+                timer: 3500,
+                allowOutsideClick: false
             }).then((result) => {
                 if (result.dismiss === Swal.DismissReason.timer) {
                     window.location.href = "./home.php";

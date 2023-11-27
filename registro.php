@@ -28,6 +28,10 @@ if (!isset($_SESSION['id'])) {
         margin-bottom: 0px !important;
     }
     </style>
+       <!-- Enlace a SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Enlace a tu archivo popup.js -->
+  <script src="./js/popup.js" defer></script>
 </head>
 
 <body>
@@ -147,9 +151,9 @@ if (!isset($_SESSION['id'])) {
                 <option value="70" <?php echo (isset($_GET['numero_filtro']) && $_GET['numero_filtro'] == 70) ? 'selected' : ''; ?>>70 registros</option>
             </select>
 
-            <button  type="submit" class="btn2 success">Filtrar</button>
-            <button type="submit" class="btn2 danger">
-            <a style="text-decoration: none; color: black;"  href="./registro.php">Borrar Flitros</a>    
+            <button type="submit">Filtrar</button>
+            <button type="submit">
+            <a style="text-decoration: none; color: black;" href="./registro.php">Borrar Flitros</a>    
             </button>
 
         </form>

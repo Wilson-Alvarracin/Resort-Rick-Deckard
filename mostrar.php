@@ -24,6 +24,10 @@ if (!isset($_SESSION['id'])) {
     ?>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Document</title>
+     <!-- Enlace a SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Enlace a tu archivo popup.js -->
+  <script src="./js/popup.js" defer></script>
 </head>
 <body>
     <nav class="navbar navbar-light bg-lights position-top">
