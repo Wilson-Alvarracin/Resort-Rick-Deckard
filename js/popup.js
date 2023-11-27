@@ -15,6 +15,9 @@ function mostrarPopup() {
         if (result.isConfirmed) {
             // Acción para cerrar sesión
             cerrarSesion();
+        } else {
+            location.reload();
+
         }
     });
 }

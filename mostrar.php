@@ -23,7 +23,9 @@ if (!isset($_SESSION['id'])) {
     echo '<link rel="stylesheet" href="./css/'.$style.'.css">';
     ?>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Document</title>
+    <title>RICK DECKARD - SALAS</title>
+    <link rel="shortcut icon" href="./img/LOGORICK.png" type="image/x-icon">
+
      <!-- Enlace a SweetAlert -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- Enlace a tu archivo popup.js -->
@@ -89,8 +91,12 @@ if (!isset($_SESSION['id'])) {
         }else{
             if ($sala['estado']== "ocupada") {
                 $diss = 'class="filtro"';
+                $clase = 'class ="btn2 danger  btn-block" value="Desocupar" ';
+
             }else{
                 $diss = "";
+                $clase = 'class ="btn2 success btn-block" value="Ocupar" ';
+
             }
             echo '<a>
             <div class="image-item"><img '.$diss.' src="./img/'.$sala['nombre_sala'].'.jpg" alt="Imagen '.$sala['id_sala'].'">
@@ -101,7 +107,7 @@ if (!isset($_SESSION['id'])) {
             <input type="hidden" name="id_sala" value="'.$sala['id_sala'].'">
             <input type="hidden" name="numero_mesa" value="'.$sala['numero_mesa'].'">
             <input type="hidden" name="id_mesa" value="'.$sala['id_mesa'].'">
-            <input type="submit"></form>';
+            <input type="submit" '. $clase . '></form>';
         }
         echo '</div>';
         echo '</div></a>';

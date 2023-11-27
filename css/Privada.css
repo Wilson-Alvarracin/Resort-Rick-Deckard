@@ -11,6 +11,61 @@
     border-radius: 10px;
 }
 
+.btn-block {
+    width: 100%;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.btn2 {
+    border: none;
+    color: white;
+    padding: 2px 4px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.primary {
+    background-color: #007bff;
+}
+
+.primary:hover {
+    background: #0b7dda;
+}
+
+.secondary {
+    background-color: #e7e7e7;
+    color: black;
+}
+
+.secondary:hover {
+    background: #ddd;
+}
+
+.success {
+    background-color: #04AA6D;
+}
+
+.success:hover {
+    background-color: #46a049;
+}
+
+.warning {
+    background-color: #ff9800;
+}
+
+.warning:hover {
+    background: #e68a00;
+}
+
+.danger {
+    background-color: #f44336;
+}
+
+.danger:hover {
+    background: #da190b;
+}
+
 .saludo {
     color: white;
 }
